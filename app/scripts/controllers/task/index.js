@@ -8,8 +8,9 @@
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-    .controller('TaskIndexCtrl', function ($scope, $uibModal, $routeParams, Task, Mission) {
+    .controller('TaskIndexCtrl', function ($scope, $uibModal, $routeParams, Task, Mission, User, UserServer) {
       $scope.mission = Mission.get({id: $routeParams.mission_id, user_id: $routeParams.user_id });
+      var user = User.get();
 
       $scope.showTask = function (task) {
         $scope.task = task;
@@ -28,7 +29,14 @@ angular.module('frontendApp')
           var task = resp;
           task.completed = true;
           task = new Task(task);
-          var promise = task.$update({mission_id: resp.mission_id, id: resp.id});
+          task.$update({mission_id: resp.mission_id, id: resp.id});
+
+          var promise = UserServer.get({id: user.id})
+
+          promise.$promise.then(function (updatedUser) {
+            // console.log(updatedUser);
+            User.set(updatedUser);
+          })
           // console.log(promise);
           // console.log(resp);
         }, function () {

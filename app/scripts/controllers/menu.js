@@ -9,10 +9,10 @@
  */
 angular.module('frontendApp')
   .controller('MenuCtrl', function ($scope, $auth, $location, User, $routeParams) {
-    var user = User.get();
+    $scope.current_user = User.get();
 
     $scope.goProfile = function () {
-      $location.path('/user/'+$routeParams.user_id+'/show');
+      $location.path('/user/'+$routeParams.id+'/show');
     };
 
     $scope.goMission = function() {
