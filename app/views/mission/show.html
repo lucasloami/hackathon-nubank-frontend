@@ -1,0 +1,6 @@
+<p>Missão {{mission.title}}</p>
+<ul>
+    <li ng-repeat="task in mission.tasks track by task.id" ng-click="showActivity(task.id)">
+        {{act.name}}
+    </li>
+</ul>
