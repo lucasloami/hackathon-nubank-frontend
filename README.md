@@ -1,12 +1,51 @@
-# frontend
+# Hackaton NuBank
+Hackaton NuBank
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
 
-## Build & development
+Instruções
+============
+```
+git clone https://github.com/candidosales/hackaton-nubank
 
-Run `grunt` for building and `grunt serve` for preview.
+cd hackaton-nubank/frontend
 
-## Testing
+npm install
+bower install
 
-Running `grunt test` will run the unit tests with karma.
+npm install -g yo grunt-cli bower
+npm install -g generator-angular
+
+```
+
+Mock
+====
+
+Teste: http://duck-hackaton.herokuapp.com/
+
+user: hackaton
+pass: hacknubank
+
+
+
+
+Real: https://hackaton-nubank.herokuapp.com
+
+
+Roadmap
+========
+
+Troubleshooting
+========
+
+Problema concurrent:serve
+```
+grunt serve --force
+```
+
+Colaboradores
+=============
+
+* André Silveira - 
+* Beatriz Harumi -
+* Cândido Sales - @candidosales
+* Lucas Loami - 
