@@ -28,7 +28,7 @@ angular.module('frontendApp')
           var task = resp;
           task.completed = true;
           task = new Task(task);
-          var promise = task.$update({mission_id: resp.mission_id});
+          var promise = task.$update({mission_id: resp.mission_id, id: resp.id});
           // console.log(promise);
           // console.log(resp);
         }, function () {
